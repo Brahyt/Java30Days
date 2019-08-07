@@ -68,11 +68,13 @@ function playAudio(e){
   audio.currentTime = 0;
   audio.play();
 }
+
 function stopAudio(e){
   const key = document.querySelector(`.playing[data-key="${e.keyCode}"]`);
   if(!key) return;
   key.classList.remove("playing");
 }
+
 document.addEventListener('keydown', playAudio);
 document.addEventListener('keyup', stopAudio);
 
