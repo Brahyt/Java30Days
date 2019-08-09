@@ -57,20 +57,26 @@
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
 
-    function searchComment(element) {
+
+
+    function searchComment(element) {                           // return false until it finds true then return that for each element.
       return element.id == 823423;
     }
 
-    function displayComment(arrayToSearch) {
-      const personA = arrayToSearch.find(searchComment);
-      return personA.text;
+    function displayComment(arrayToSearch) {                    // Array with objects passed into displayComment
+      const personA = arrayToSearch.find(searchComment);        // Storing the object that contains the find arguments that are found @ searchComment()
+      return personA.text;                                      // Display the text that is found in th object that is matching the id.
     }
 
-    console.log(displayComment(comments))
+    console.log(displayComment(comments))  // passing array into displayComment
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+
+    const arrayFindIndex = comments.findIndex(comment => comment.id === 823423);
+    comments.splice(arrayFindIndex, 1);
+    console.table(comments);
 
   </script>
 </body>
